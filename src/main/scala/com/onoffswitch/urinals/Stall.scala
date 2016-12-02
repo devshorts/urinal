@@ -55,7 +55,16 @@ case class Stall(isFree: Boolean, id: Int = 0, private[urinals] var left: Option
 
   def rightFree: Int = countFree(_.right)
 
+  /**
+   * Contiguous occupied blocks on the left ignoring free seats inbetween this and occupied
+   * @return
+   */
   def leftOccupied: Int = flattenRight.reverse.dropWhile(_.isFree).takeWhile(!_.isFree).size
+
+  /**
+   * Contiguous occupied blocks on the right ignoring free seats inbetween this and occupied
+   * @return
+   */
 
   def rightOccupied: Int = flattenLeft.dropWhile(_.isFree).takeWhile(!_.isFree).size
 }

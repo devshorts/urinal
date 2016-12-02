@@ -14,7 +14,7 @@ object WeightsStrategy extends Strategy {
       new Corner,
       new Centered,
       new LeastOccupiedClusters,
-      new DistanceFromWall(stalls.size, stalls.filter(_.isFree).size)
+      new DistanceFromWall(stalls.size, stalls.count(_.isFree))
     )
 
     val stallsWithWeights =
