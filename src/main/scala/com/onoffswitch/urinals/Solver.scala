@@ -1,7 +1,3 @@
-//
-// Copyright (c) 2011-2016 by Curalate, Inc.
-//
-
 package com.onoffswitch.urinals
 
 trait Strategy {
